@@ -14,6 +14,7 @@
 		0A41D01B1AF984B700CBEA75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A41D01A1AF984B700CBEA75 /* Images.xcassets */; };
 		0A41D01E1AF984B700CBEA75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41D01C1AF984B700CBEA75 /* LaunchScreen.xib */; };
 		0A41D02A1AF984B700CBEA75 /* EaiTaChovendoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A41D0291AF984B700CBEA75 /* EaiTaChovendoTests.m */; };
+		47D35CCB1B0372AC00163ED4 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47D35CCA1B03729D00163ED4 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0A41D0231AF984B700CBEA75 /* EaiTaChovendoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EaiTaChovendoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A41D0281AF984B700CBEA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A41D0291AF984B700CBEA75 /* EaiTaChovendoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EaiTaChovendoTests.m; sourceTree = "<group>"; };
+		47CBED051B0150C200435BC6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		47D35CCA1B03729D00163ED4 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 				0A41D01A1AF984B700CBEA75 /* Images.xcassets */,
 				0A41D01C1AF984B700CBEA75 /* LaunchScreen.xib */,
 				0A41D00D1AF984B700CBEA75 /* Supporting Files */,
+				47CBED051B0150C200435BC6 /* PrefixHeader.pch */,
 			);
 			path = EaiTaChovendo;
 			sourceTree = "<group>";
@@ -96,6 +100,7 @@
 		0A41D00D1AF984B700CBEA75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47D35CCA1B03729D00163ED4 /* OpenSans-Regular.ttf */,
 				0A41D00E1AF984B700CBEA75 /* Info.plist */,
 				0A41D00F1AF984B700CBEA75 /* main.m */,
 			);
@@ -199,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D35CCB1B0372AC00163ED4 /* OpenSans-Regular.ttf in Resources */,
 				0A41D0191AF984B700CBEA75 /* Main.storyboard in Resources */,
 				0A41D01E1AF984B700CBEA75 /* LaunchScreen.xib in Resources */,
 				0A41D01B1AF984B700CBEA75 /* Images.xcassets in Resources */,
@@ -349,9 +355,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = EaiTaChovendo/PrefixHeader.pch;
 				INFOPLIST_FILE = EaiTaChovendo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EaiTaChovendo;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -359,9 +368,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = EaiTaChovendo/PrefixHeader.pch;
 				INFOPLIST_FILE = EaiTaChovendo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EaiTaChovendo;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -418,6 +430,7 @@
 				0A41D02F1AF984B700CBEA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A41D0301AF984B700CBEA75 /* Build configuration list for PBXNativeTarget "EaiTaChovendoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				0A41D0321AF984B700CBEA75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
