@@ -361,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = EaiTaChovendo/PrefixHeader.pch;
 				INFOPLIST_FILE = EaiTaChovendo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -374,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = EaiTaChovendo/PrefixHeader.pch;
 				INFOPLIST_FILE = EaiTaChovendo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

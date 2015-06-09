@@ -61,6 +61,7 @@
      _viewOeste.backgroundColor = [UIColor clearColor];
      _viewLeste.backgroundColor = [UIColor clearColor];
      _viewSul.backgroundColor = [UIColor clearColor];
+        
       // Faz conexão e recebe dados do DataPOA
     NSString *url = [NSString stringWithFormat:@"https://metroclimaestacoes.procempa.com.br/metroclima/seam/resource/rest/externalRest/ultimaLeitura"];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
