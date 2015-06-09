@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _imagem.image = [UIImage imageNamed:_imageName];
+    
     if ([_valores objectForKey:@"temperaturaMaximaPrevisao"] != (id)[NSNull null])
     {
         _tempMax.text = [NSString stringWithFormat:@"%@°", [[_valores objectForKey:@"temperaturaMaximaPrevisao"] stringValue]];
