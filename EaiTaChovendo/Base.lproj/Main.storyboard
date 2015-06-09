@@ -112,13 +112,13 @@
                                     <constraint firstAttribute="height" constant="60" id="kEx-a6-Zn4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx3-xj-7Lm">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx3-xj-7Lm">
                                 <rect key="frame" x="225" y="243" width="60" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="NGy-z1-7hz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="NGy-z1-7hz">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2r-nS-4w5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2r-nS-4w5">
                                         <rect key="frame" x="7" y="6" width="45" height="45"/>
                                     </imageView>
                                 </subviews>
@@ -136,7 +136,7 @@
                                     <constraint firstAttribute="width" constant="60" id="yIb-ns-3I7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81C-vQ-Bo3">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81C-vQ-Bo3">
                                 <rect key="frame" x="317" y="239" width="60" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="Hrb-76-gVQ">
@@ -168,6 +168,16 @@
                                     <constraint firstAttribute="height" constant="60" id="gx0-SZ-nfJ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-zl-HxM">
+                                <rect key="frame" x="16" y="509" width="46" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="gz0-R8-E0v"/>
+                                    <constraint firstAttribute="width" constant="46" id="uQN-77-7da"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="vo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -193,6 +203,8 @@
                             <constraint firstItem="MAq-RM-mKR" firstAttribute="top" secondItem="hzy-Mw-R4G" secondAttribute="bottom" id="fyZ-sF-35h"/>
                             <constraint firstItem="MAq-RM-mKR" firstAttribute="top" secondItem="kkP-pq-5Gs" secondAttribute="bottom" constant="150" id="hEC-5d-cWo"/>
                             <constraint firstItem="m2f-Ev-elz" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="UXA-kQ-moi" secondAttribute="centerY" multiplier="2" constant="50" id="iKp-TD-ikp"/>
+                            <constraint firstItem="MAq-RM-mKR" firstAttribute="top" secondItem="KZo-zl-HxM" secondAttribute="bottom" constant="8" id="ii3-Px-P2S"/>
+                            <constraint firstItem="KZo-zl-HxM" firstAttribute="leading" secondItem="a8E-Dn-cTx" secondAttribute="leading" constant="16" id="izL-aP-eOw"/>
                             <constraint firstItem="81C-vQ-Bo3" firstAttribute="leading" secondItem="kkP-pq-5Gs" secondAttribute="trailing" constant="8" symbolic="YES" id="j1o-45-L7f"/>
                             <constraint firstItem="m2f-Ev-elz" firstAttribute="leading" secondItem="dx3-xj-7Lm" secondAttribute="trailing" constant="-5" id="nCl-JC-a4k"/>
                             <constraint firstItem="qUr-Gh-nq3" firstAttribute="centerX" secondItem="hzy-Mw-R4G" secondAttribute="centerX" constant="47" id="xiv-kt-0jF"/>
@@ -356,5 +368,6 @@
         <image name="norte" width="426" height="356"/>
         <image name="oeste" width="287" height="460"/>
         <image name="sul" width="507" height="388"/>
+        <image name="vo" width="108" height="176"/>
     </resources>
 </document>
