@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewSul;
 @property (weak, nonatomic) IBOutlet UIImageView *chuvaLeste;
 @property (weak, nonatomic) IBOutlet UIImageView *chuvaSul;
+@property (weak, nonatomic) IBOutlet UILabel *fraseDaVo;
 
 @property (nonatomic) NSMutableDictionary * zonaNorteData;
 @property (nonatomic) NSMutableDictionary * zonaSulData;
@@ -37,6 +38,12 @@
 
 @property (nonatomic,retain) CLLocationManager *locationManager;
 @property CLGeocoder *geocoder;
+@property (weak, nonatomic) IBOutlet UIImageView *boxVovo;
+
+@property NSArray* semchuvaMenos20;
+@property NSArray* semchuvaMais20;
+@property NSArray* comchuvaMenos20;
+@property NSArray* comchuvaMais20;
 
 @end
 
@@ -44,7 +51,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    _semchuvaMenos20 = @[@"Bota um casaquinho pra sair no sereno!",@"Não me sai sem levar um casaquinho.",@"Pega tua Japona no armário antes de sair nesse frio.", @"Vai comer umas bergamota no sol pra te esquentar."];
+    _semchuvaMais20 = @[@"Hoje ta bom pra dar uma volta na redenção.",@"Sai desse computador e vai pegar um solzinho.", @"Já vai sair de novo? Leva um guarda-chuva, vai que chove!", @"Não ta chovendo agora, mas leva um guarda-chuva mesmo assim!"];
+    _comchuvaMenos20 = @[@"Leva um guarda-chuva pra não te molhar!", @"Vai pegar uma pneumonia nessa chuva, não me esquece o guarda-chuva!", @"Não te esquece do guarda-chuva!", @"Vê se me põe umas lã por baixo desse casaco. E não me esquece do guarda-chuva!"];
+    _comchuvaMais20 = @[@"Eu sei que ta quente, mas não me toma banho de chuva que vai gripar!", @"Não te esquece do guarda-chuva!", @"Quantas vezes já te disse? Me pega um guarda-chuva guri!"];
+    
+    _boxVovo.hidden=YES;
      _viewNorte.backgroundColor = [UIColor clearColor];
      _viewOeste.backgroundColor = [UIColor clearColor];
      _viewLeste.backgroundColor = [UIColor clearColor];
@@ -150,6 +162,25 @@
 -(IBAction)backFromDetail:(UIStoryboardSegue *)segue
 {
 }
+
+- (IBAction)vovo:(id)sender {
+    _boxVovo.hidden=NO;
+    if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+        _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
+    else if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
+        _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
+    else if([[_zonaSulData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+        _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
+    else
+        _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
+
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    _boxVovo.hidden=YES;
+    _fraseDaVo.text=@"";
+}
+
 
 - (void)deviceLocation
 {
