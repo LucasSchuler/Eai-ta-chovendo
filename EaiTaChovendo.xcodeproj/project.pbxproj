@@ -14,6 +14,7 @@
 		0A41D01B1AF984B700CBEA75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A41D01A1AF984B700CBEA75 /* Images.xcassets */; };
 		0A41D01E1AF984B700CBEA75 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A41D01C1AF984B700CBEA75 /* LaunchScreen.xib */; };
 		0A41D02A1AF984B700CBEA75 /* EaiTaChovendoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A41D0291AF984B700CBEA75 /* EaiTaChovendoTests.m */; };
+		0A8E71321B2613FD00EA3CAF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E71311B2613FD00EA3CAF /* DetailViewController.m */; };
 		47D35CCB1B0372AC00163ED4 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47D35CCA1B03729D00163ED4 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		0A41D0231AF984B700CBEA75 /* EaiTaChovendoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EaiTaChovendoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A41D0281AF984B700CBEA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A41D0291AF984B700CBEA75 /* EaiTaChovendoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EaiTaChovendoTests.m; sourceTree = "<group>"; };
+		0A8E71301B2613FD00EA3CAF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0A8E71311B2613FD00EA3CAF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		47CBED051B0150C200435BC6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		47D35CCA1B03729D00163ED4 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +87,8 @@
 		0A41D00C1AF984B700CBEA75 /* EaiTaChovendo */ = {
 			isa = PBXGroup;
 			children = (
+				0A8E71301B2613FD00EA3CAF /* DetailViewController.h */,
+				0A8E71311B2613FD00EA3CAF /* DetailViewController.m */,
 				0A41D0111AF984B700CBEA75 /* AppDelegate.h */,
 				0A41D0121AF984B700CBEA75 /* AppDelegate.m */,
 				0A41D0141AF984B700CBEA75 /* ViewController.h */,
@@ -228,6 +233,7 @@
 				0A41D0161AF984B700CBEA75 /* ViewController.m in Sources */,
 				0A41D0131AF984B700CBEA75 /* AppDelegate.m in Sources */,
 				0A41D0101AF984B700CBEA75 /* main.m in Sources */,
+				0A8E71321B2613FD00EA3CAF /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
