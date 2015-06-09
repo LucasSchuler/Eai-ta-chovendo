@@ -25,23 +25,43 @@
     
     if ([_valores objectForKey:@"temperaturaMaximaPrevisao"] != (id)[NSNull null])
     {
-        _tempMax.text = [[_valores objectForKey:@"temperaturaMaximaPrevisao"] stringValue];
+        _tempMax.text = [NSString stringWithFormat:@"%@°", [[_valores objectForKey:@"temperaturaMaximaPrevisao"] stringValue]];
+    }
+    else
+    {
+        _tempMax.text = @"-";
     }
     if ([_valores objectForKey:@"temperaturaMinimaPrevisao"] != (id)[NSNull null])
     {
-        _tempMin.text = [[_valores objectForKey:@"temperaturaMinimaPrevisao"] stringValue];
+        _tempMin.text = [NSString stringWithFormat:@"%@°",[[_valores objectForKey:@"temperaturaMinimaPrevisao"] stringValue]];
+    }
+    else
+    {
+        _tempMin.text = @"-";
     }
     if ([_valores objectForKey:@"umidadeExterna"] != (id)[NSNull null])
     {
-        _umidade.text = [[_valores objectForKey:@"umidadeExterna"] stringValue];
+        _umidade.text = [NSString stringWithFormat:@"%@%%",[[_valores objectForKey:@"umidadeExterna"] stringValue]];
+    }
+    else
+    {
+        _umidade.text = @"-";
     }
     if ([_valores objectForKey:@"velocidadeVento"] != (id)[NSNull null])
     {
-        _velocidadeVento.text = [[_valores objectForKey:@"velocidadeVento"] stringValue];
+        _velocidadeVento.text = [NSString stringWithFormat:@"%@km",[[_valores objectForKey:@"velocidadeVento"] stringValue]];
+    }
+    else
+    {
+        _velocidadeVento.text = @"-";
     }
     if ([_valores objectForKey:@"chuvaDiaria"] != (id)[NSNull null])
     {
-        _chuva.text = [[_valores objectForKey:@"chuvaDiaria"] stringValue];
+        _chuva.text = [NSString stringWithFormat:@"%@ml",[[_valores objectForKey:@"chuvaDiaria"] stringValue]];
+    }
+    else
+    {
+        _chuva.text = @"-";
     }
 }
 
