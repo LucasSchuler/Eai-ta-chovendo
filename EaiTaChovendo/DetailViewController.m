@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *velocidadeVento;
 @property (weak, nonatomic) IBOutlet UILabel *chuva;
 @property (weak, nonatomic) IBOutlet UIImageView *imagem;
+@property (weak, nonatomic) IBOutlet UILabel *temperatura;
+@property (weak, nonatomic) IBOutlet UILabel *nomeRegiao;
 
 @end
 
@@ -24,6 +26,12 @@
     [super viewDidLoad];
     
     _imagem.image = [UIImage imageNamed:_imageName];
+    _nomeRegiao.text = [[@"Zona " stringByAppendingString:_imageName] capitalizedString];
+    
+    if ([_valores objectForKey:@"temperaturaExterna"] != (id)[NSNull null])
+    {
+        _temperatura.text = [NSString stringWithFormat:@"%@°",[[_valores objectForKey:@"temperaturaExterna"] stringValue]];
+    }else{ _temperatura.text = @"-";}
     
     if ([_valores objectForKey:@"temperaturaMaximaPrevisao"] != (id)[NSNull null])
     {

@@ -45,6 +45,11 @@
 @property NSArray* comchuvaMenos20;
 @property NSArray* comchuvaMais20;
 
+@property (nonatomic) int chuvaAcumuladaNorte;
+@property (nonatomic) int chuvaAcumuladaSul;
+@property (nonatomic) int chuvaAcumuladaLeste;
+@property (nonatomic) int chuvaAcumuladaOeste;
+
 @end
 
 @implementation ViewController
@@ -71,6 +76,9 @@
                                                       options:NSJSONReadingMutableContainers error:&error];
     // Aloca dados recebidos nos parâmentros
     [self alocaDados];
+    [self deviceLocation];
+    
+    
 
 }
 
@@ -193,12 +201,33 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     [_locationManager startUpdatingLocation];
+    
+//    [_geocoder reverseGeocodeLocation:[_locationManager lastObject] completionHandler:^(NSArray *placemarks, NSError *error) {
+//        CLPlacemark *placemark = [placemarks lastObject];
+//        
+//        //        NSString *street = placemark.thoroughfare;
+//        //        NSString *city = placemark.locality;
+//        //        NSString *posCode = placemark.postalCode;
+//        //        NSString *country = placemark.country;
+//        CLRegion *region = placemark.region;
+//        //
+//        NSDictionary *dic = placemark.addressDictionary;
+//        
+//        NSLog(@"%@", region);
+//        NSLog(@"%@", dic[@"SubLocality"]);
+//        
+//        // stopping locationManager from fetching again
+//        [_locationManager stopUpdatingLocation];
+//    }];
+    
     NSLog(@" lat: %f",_locationManager.location.coordinate.latitude);
     NSLog(@" lon: %f",_locationManager.location.coordinate.longitude);
     float lat = _locationManager.location.coordinate.latitude;
     float lon = _locationManager.location.coordinate.longitude;
     if (lat >= 29.970344 && lat <= -30.045445 && lon >= -51.086679 && lon <= -51.24299964){
         NSLog(@"está na região norte");
+    }else if(lat >= 30.0424904 && lat <= -30.045445 && lon >= -51.24299964 && lon <= -51.24299964){
+        NSLog(@"está na região oeste");
     }
 }
 
