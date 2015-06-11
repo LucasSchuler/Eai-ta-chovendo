@@ -30,7 +30,7 @@
                                             <constraint firstAttribute="height" constant="30" id="tqh-Di-7sv"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azd-92-ZTp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azd-92-ZTp">
                                         <rect key="frame" x="263" y="6" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,13 +64,13 @@
                                     <constraint firstAttribute="height" constant="60" id="kEx-a6-Zn4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx3-xj-7Lm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dx3-xj-7Lm">
                                 <rect key="frame" x="225" y="244" width="60" height="60"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="NGy-z1-7hz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="NGy-z1-7hz">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2r-nS-4w5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2r-nS-4w5">
                                         <rect key="frame" x="7" y="6" width="45" height="45"/>
                                     </imageView>
                                 </subviews>
@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="width" constant="60" id="yIb-ns-3I7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81C-vQ-Bo3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81C-vQ-Bo3">
                                 <rect key="frame" x="317" y="240" width="60" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="elipse" translatesAutoresizingMaskIntoConstraints="NO" id="Hrb-76-gVQ">
@@ -244,6 +244,7 @@
                         <outlet property="chuvaNorte" destination="a4m-0c-4M8" id="UNr-uZ-BMf"/>
                         <outlet property="chuvaOeste" destination="R2r-nS-4w5" id="aSz-L5-RyC"/>
                         <outlet property="chuvaSul" destination="bQ3-Bq-p2R" id="lEp-s4-6TY"/>
+                        <outlet property="endereco" destination="Azd-92-ZTp" id="jug-Nz-dwX"/>
                         <outlet property="fraseDaVo" destination="VDY-DV-7eQ" id="k4i-sr-E2z"/>
                         <outlet property="viewLeste" destination="81C-vQ-Bo3" id="kRg-T3-hHt"/>
                         <outlet property="viewNorte" destination="m2f-Ev-elz" id="Rgy-Pb-857"/>

@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "DetailViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnNorte;
@@ -39,6 +39,7 @@
 @property (nonatomic,retain) CLLocationManager *locationManager;
 @property CLGeocoder *geocoder;
 @property (weak, nonatomic) IBOutlet UIImageView *boxVovo;
+@property (weak, nonatomic) IBOutlet UILabel *endereco;
 
 @property NSArray* semchuvaMenos20;
 @property NSArray* semchuvaMais20;
@@ -76,10 +77,8 @@
                                                       options:NSJSONReadingMutableContainers error:&error];
     // Aloca dados recebidos nos parâmentros
     [self alocaDados];
+    _locationManager.delegate = self;
     [self deviceLocation];
-    
-    
-
 }
 
 -(void)alocaDados
@@ -128,13 +127,11 @@
                 }
 
             }
-           // NSLog(@"%@", [aux objectForKey:@"temperaturaExterna"]);
         }
     }
 }
 
 - (IBAction)clickNorte:(id)sender {
-    //[_btnNorte setBackgroundImage:[UIImage imageNamed:@"norte"]  forState:UIControlStateNormal];
     [self performSegueWithIdentifier:@"gotoDetail" sender:@"norte"];
 }
 - (IBAction)clickOeste:(id)sender {
@@ -190,7 +187,6 @@
     _fraseDaVo.text=@"";
 }
 
-
 - (void)deviceLocation
 {
     _locationManager = [[CLLocationManager alloc] init];
@@ -201,34 +197,27 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     [_locationManager startUpdatingLocation];
-    
-//    [_geocoder reverseGeocodeLocation:[_locationManager lastObject] completionHandler:^(NSArray *placemarks, NSError *error) {
-//        CLPlacemark *placemark = [placemarks lastObject];
-//        
-//        //        NSString *street = placemark.thoroughfare;
-//        //        NSString *city = placemark.locality;
-//        //        NSString *posCode = placemark.postalCode;
-//        //        NSString *country = placemark.country;
-//        CLRegion *region = placemark.region;
-//        //
-//        NSDictionary *dic = placemark.addressDictionary;
-//        
-//        NSLog(@"%@", region);
-//        NSLog(@"%@", dic[@"SubLocality"]);
-//        
-//        // stopping locationManager from fetching again
-//        [_locationManager stopUpdatingLocation];
-//    }];
-    
     NSLog(@" lat: %f",_locationManager.location.coordinate.latitude);
     NSLog(@" lon: %f",_locationManager.location.coordinate.longitude);
     float lat = _locationManager.location.coordinate.latitude;
     float lon = _locationManager.location.coordinate.longitude;
-    if (lat >= 29.970344 && lat <= -30.045445 && lon >= -51.086679 && lon <= -51.24299964){
-        NSLog(@"está na região norte");
-    }else if(lat >= 30.0424904 && lat <= -30.045445 && lon >= -51.24299964 && lon <= -51.24299964){
-        NSLog(@"está na região oeste");
-    }
+    if(lat>=-30.045445 && lat<=-29.970344 && lon>=-51.241861 && lon<= -51.086679)
+        NSLog(@"norte");
+    //else if() TODO -- OUTRAS REGIOES
 }
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [_geocoder reverseGeocodeLocation:[locations lastObject] completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks lastObject];
+        NSDictionary *dic = placemark.addressDictionary;
+        _endereco.text=dic[@"Street"];
+        [_locationManager stopUpdatingLocation];
+    }];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"failed to fetch current location : %@", error);
+}
+
 
 @end
