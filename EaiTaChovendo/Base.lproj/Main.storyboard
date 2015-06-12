@@ -180,17 +180,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxDaVo" translatesAutoresizingMaskIntoConstraints="NO" id="BpQ-c2-EcE">
-                                <rect key="frame" x="77" y="448" width="190" height="95"/>
+                                <rect key="frame" x="77" y="448" width="200" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="RXM-nL-67o"/>
-                                    <constraint firstAttribute="width" constant="190" id="VxF-Gs-x1T"/>
+                                    <constraint firstAttribute="width" constant="200" id="VxF-Gs-x1T"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-DV-7eQ">
-                                <rect key="frame" x="90" y="452" width="165" height="84"/>
+                                <rect key="frame" x="90" y="452" width="175" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="JmK-sb-Zdl"/>
-                                    <constraint firstAttribute="width" constant="165" id="b5O-b7-PrL"/>
+                                    <constraint firstAttribute="width" constant="175" id="b5O-b7-PrL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +200,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dx3-xj-7Lm" firstAttribute="top" secondItem="81C-vQ-Bo3" secondAttribute="bottom" constant="-56" id="029-1F-2Kx"/>
-                            <constraint firstItem="VDY-DV-7eQ" firstAttribute="leading" secondItem="BpQ-c2-EcE" secondAttribute="trailing" constant="-177" id="4z1-eF-yNS"/>
+                            <constraint firstItem="VDY-DV-7eQ" firstAttribute="leading" secondItem="BpQ-c2-EcE" secondAttribute="trailing" constant="-187" id="4z1-eF-yNS"/>
                             <constraint firstItem="UoD-TZ-rKD" firstAttribute="leading" secondItem="kkP-pq-5Gs" secondAttribute="trailing" constant="-37" id="5Ud-7v-pHu"/>
                             <constraint firstItem="KZo-zl-HxM" firstAttribute="leading" secondItem="a8E-Dn-cTx" secondAttribute="leading" constant="16" id="5XG-7o-6tS"/>
                             <constraint firstAttribute="trailing" secondItem="hzy-Mw-R4G" secondAttribute="trailing" id="Bse-1E-mRa"/>

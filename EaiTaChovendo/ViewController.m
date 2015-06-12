@@ -51,6 +51,8 @@
 @property (nonatomic) int chuvaAcumuladaLeste;
 @property (nonatomic) int chuvaAcumuladaOeste;
 
+@property NSString* minhaZona;
+
 @end
 
 @implementation ViewController
@@ -171,15 +173,43 @@
 
 - (IBAction)vovo:(id)sender {
     _boxVovo.hidden=NO;
-    if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
-        _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
-    else if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
-        _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
-    else if([[_zonaSulData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
-        _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
-    else
-        _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
-
+    if([_minhaZona isEqualToString:@"norte"]){
+        if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaNorteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
+        else if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaNorteData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
+            _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
+        else if([[_zonaNorteData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaNorteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
+        else
+            _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
+    }else if([_minhaZona isEqualToString:@"oeste"]){
+        if([[_zonaOesteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaOesteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
+        else if([[_zonaOesteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaOesteData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
+            _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
+        else if([[_zonaOesteData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaOesteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
+        else
+            _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
+    }else if([_minhaZona isEqualToString:@"leste"]){
+        if([[_zonaLesteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaLesteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
+        else if([[_zonaLesteData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaLesteData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
+            _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
+        else if([[_zonaLesteData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaLesteData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
+        else
+            _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
+    }else{
+        if([[_zonaSulData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _comchuvaMenos20[arc4random()%(4)];
+        else if([[_zonaSulData objectForKey:@"chuvaDiaria"] doubleValue] > 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] >= 20)
+            _fraseDaVo.text = _comchuvaMais20[arc4random()%(3)];
+        else if([[_zonaSulData objectForKey:@"chuvaDiaria"] doubleValue] == 0.0 && [[_zonaSulData objectForKey:@"temperaturaExterna"] doubleValue] < 20)
+            _fraseDaVo.text = _semchuvaMenos20[arc4random()%(4)];
+        else
+            _fraseDaVo.text = _semchuvaMais20[arc4random()%(4)];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -201,9 +231,15 @@
     NSLog(@" lon: %f",_locationManager.location.coordinate.longitude);
     float lat = _locationManager.location.coordinate.latitude;
     float lon = _locationManager.location.coordinate.longitude;
+    
     if(lat>=-30.045445 && lat<=-29.970344 && lon>=-51.241861 && lon<= -51.086679)
-        NSLog(@"norte");
-    //else if() TODO -- OUTRAS REGIOES
+        _minhaZona = @"norte";
+    else if(lat>=-30.18668309 && lat<=-30.0424905 && lon>=-51.24299964 && lon<=-51.1717097)
+        _minhaZona = @"oeste";
+    else if(lat>=-30.18668309 && lat<=-30.0424905 && lon>=-51.1717098 && lon<=-51.0965538)
+        _minhaZona = @"leste";
+    else if(lat>=-30.28020235 && lat<=-30.18668310 && lon>=-51.26272202 && lon<=-50.9578379)
+        _minhaZona = @"sul";
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
